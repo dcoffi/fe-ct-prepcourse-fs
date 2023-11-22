@@ -181,21 +181,13 @@ function mesesDelAño(array) {
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
   
-   let nuevosMeses = [];
+   const mesesPerdidos=['Enero','Marzo','Noviembre'];
 
-   for (let i=0;i<array.length;i++) {
-      
-         if (array[i] == "Enero" || array[i] == "Marzo" || array[i] == "Noviembre"  ) {
-            nuevosMeses.push(array[i]);
-            }
-        
+   const mesesEncontrados=array.filter((mes=>mesesPerdidos.includes(mes)));
+   if(mesesEncontrados.length==mesesPerdidos.length){
+      return mesesEncontrados;
    }
-   if(nuevosMeses.length>0){
-      return nuevosMeses;
-   }else{
-      return "No se encontraron los meses pedidos";
-   }
-   
+   return "No se encontraron los meses pedidos";
 }
 
 function tablaDelSeis() {
